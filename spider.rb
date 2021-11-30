@@ -4,6 +4,9 @@ require 'uri';
 require 'json';
 require 'time';
 
+#ctrl shift k
+#window.open("","_self");
+
 ENCODED = 'aHR0cDovL2ltYWdlcy5waW1wcm9sbC5jb20vc2MvMC8';#http
 
 
@@ -47,17 +50,17 @@ hit = nil;
 until hit do
   code = nil;
   🎲 = rand(100..139_000);#1f3b2
-  🔖 = build_url(🎲 , 🔗,'/glam/','073.jpg');#1f516
+  🔖 = build_url(🎲 , 🔗,'/source/');#1f516
   pp "checking on #{🎲}";
   resp = send_out(🔖);
   code = resp.code if resp;#avoid calls on nil object
   hit = true if code=='200';
   pp resp.uri.to_s if hit;
-  👁(build_url(🎲-2, 🔗,'/glam/','073.jpg')) if hit;
-  👁(build_url(🎲-1, 🔗,'/glam/','073.jpg')) if hit;
+  👁(build_url(🎲-2, 🔗,'/source/','073.jpg')) if hit;
+  👁(build_url(🎲-1, 🔗,'/source/','073.jpg')) if hit;
   👁(resp.uri.to_s) if hit;
-  👁(build_url(🎲+1, 🔗,'/glam/','073.jpg')) if hit;
-  👁(build_url(🎲+2, 🔗,'/glam/','073.jpg')) if hit;
+  👁(build_url(🎲+1, 🔗,'/source/','073.jpg')) if hit;
+  👁(build_url(🎲+2, 🔗,'/source/','073.jpg')) if hit;
 end#until
 
 #binding.irb;
